@@ -18,8 +18,8 @@ Aggragates job posting from several popular job search websites.  Returns highly
 * [lodash](https://lodash.com/)  
 ***
 ## Team  
-Matt  
-Rachel  
-Amanda  
-Alton  
+  Matt  
+  Rachel  
+  Amanda  
+  Alton  
 ***
