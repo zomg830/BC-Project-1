@@ -1,8 +1,6 @@
 # BC-Project-1
 
 # APIs
-
-
 -GitHub Jobs
 -USAJobs
 -Indeed
