@@ -1,8 +1,8 @@
 ## Socially Conscious Online Navigator for Employment (SCONE Jobs)  
-
+***
 ## Description  
-Aggragates job posting from several popular job search websites.  Returns highly customized job search results that are also tasty and delicious  
-
+Aggragates job posting from several popular job search websites.  Returns highly customized job search results that are also tasty and delicious.  
+***
 ## APIs
 * [GitHub Jobs](https://jobs.github.com/api)  
 * [USAJobs](https://developer.usajobs.gov/)  
@@ -10,12 +10,16 @@ Aggragates job posting from several popular job search websites.  Returns highly
 * [Ziprecruiter](https://www.ziprecruiter.com/zipsearch)  
 * [Glassdoor](https://www.glassdoor.com/developer/index.htm)  
 * [Search.gov.jobs](https://search.gov/developer/jobs.html)  
-
+***
 ## Libraries
 * [BootStrap](https://getbootstrap.com/)  
 * [JQuery](https://jquery.com/)  
 * [FireBase](https://firebase.google.com/)  
 * [lodash](https://lodash.com/)  
-
-## 
-
+***
+## Team  
+Matt  
+Rachel  
+Amanda  
+Alton  
+***
