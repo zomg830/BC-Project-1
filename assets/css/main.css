@@ -2,6 +2,15 @@
     padding-top:5vh;
 }
 
+.navbar, body, .footer{
+    background-color: #e3f2fd;
+    background-image: url("https://www.transparenttextures.com/patterns/graphcoders-lil-fiber.png");
+}
+
+.btn-outline-primary, .btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited {
+    background-color: #e3f2fd !important;
+}
+
 .footer {
     position: relative;
     bottom: 0;
