@@ -1,0 +1,16 @@
+#search-boxes{
+    padding-top:5vh;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 6vh;
+    background-color: #f5f5f5;
+}
+
+.carousel-inner > .item > img{
+    margin:auto;
+}
