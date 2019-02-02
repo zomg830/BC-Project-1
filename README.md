@@ -1,4 +1,4 @@
-# Socially Conscious Online Navigator for Employment (SCONE Jobs)  
+## Socially Conscious Online Navigator for Employment (SCONE Jobs)  
 
 # APIs
 * [GitHub Jobs](https://jobs.github.com/api)  
