@@ -3,9 +3,9 @@
 # APIs
 
 
-*GitHub Jobs
-*USAJobs
-*Indeed
-*Ziprecruiter
-*Glassdoor
-*Search.govs
+-GitHub Jobs
+-USAJobs
+-Indeed
+-Ziprecruiter
+-Glassdoor
+-Search.govs
