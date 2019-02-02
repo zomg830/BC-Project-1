@@ -1,4 +1,4 @@
-# BC-Project-1
+# Socially Conscious Online Navigator for Employment (SCONE Jobs)  
 
 # APIs
 * [GitHub Jobs](https://jobs.github.com/api)  
