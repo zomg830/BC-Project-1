@@ -1,138 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SCONE Job Search</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/hover.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
-    <link rel="icon" href="assets/images/scone.png">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>SCONE Job Search</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+	<link href="assets/css/rwc.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" media="screen" href="assets/css/hover.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
+	<link rel="icon" href="assets/images/scone.png">
 </head>
 <body>
-      <!-- modal dialog for initial search -->
-      <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalCenterTitle">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="keyword">Keyword</label>
-                    <input type="search" class="form-control" id="keyword" placeholder="Search">
-                    <label for="sitePick">Search These Sites</label>
-					<!--  checkbox to select / un-select all job sites  -->
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="all">
-                        <label class="form-check-label" for="all">Select all</label>
-                    </div>
-					<!--  multiple select element for job sites to be returned-->
-                    <select multiple class="form-control" id="sitePick" size="5">
-                        <option>github</option>
-                        <option>usajobs</option>
-                        <option>indeed</option>
-                        <option>ziprecruiter</option>
-                        <option>glassdoor</option>
-                    </select>
-                    <small></small>
-                </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-				<!--  we could use this button to call the ajax GET function-->
-              <button type="button" class="btn btn-primary">Find Jobs</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- navbar -->
-    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-        <a class="navbar-brand"><img src="assets/images/scone.png" style="width:10%;" alt="...">SCONE Job Search</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="https://jobs.github.com/" target="_blank">GitHub Jobs</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://www.usajobs.gov/" target="_blank">USAJOBS</a>
-            </li>
-            <li class="nav-item">
-                    <a class="nav-link" href="https://www.indeed.com/" target="_blank">Indeed</a>
-            </li>
-            <li class="nav-item">
-                    <a class="nav-link" href="https://www.ziprecruiter.com/" target="_blank">ZipRecruiter</a>
-            </li>
-            <li class="nav-item">
-                    <a class="nav-link" href="https://www.glassdoor.com/index.htm" target="_blank">Glassdoor</a>
-            </li>
-            </ul>
-        </div>
-    </nav>
-    <br>
-    <!-- landing -->
-    <div class="container">
-        <div class="card">
-        <div class="card-header">
-            Finding the right job is tough.
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">SCONE is here to help things go right!</h5>
-            <p class="card-text">By searching for jobs with the Socially Conscious Online Navigator for Employment (SCONE), you're not just finding a job, you're finding fulfillment.</p>
-            <a class="btn btn-outline-primary" data-toggle="modal" data-target="#modalCenter">Start your job search today!</a>
-        </div>
-    </div>
-    </div>
-    <div class="container" id="search-boxes">
-        <div class="input-group mb-3">
-			
-            <input type="text" class="form-control" id="job-title" placeholder="Job Title, e.g., Social Media Influencer" aria-label="Example text with button addon" aria-describedby="button-addon1"><!--  where is button-addon1  -->
-            <div class="input-group-prepend">
-                <button class="btn btn-outline-primary form-submit" type="button" id="job-title-btn">Search</button>
-            </div>
-        </div>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" id="location" placeholder="Location, e.g., city, state, or zip" aria-label="Example text with button addon" aria-describedby="button-addon1"><!--  where is button-addon1  -->
-            <div class="input-group-prepend">
-                <button class="btn btn-outline-primary form-submit" type="button" id="location-btn">Search</button>
-            </div>
-        </div>
-    </div>
-    <div class="container bg-light">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active text-center">
-                <img src="assets/images/Number1.png" class="center-block" alt="...">
-                </div>
-                <div class="carousel-item text-center">
-                <img src="assets/images/Number2.jpg" class="center-block" alt="...">
-                </div>
-                <div class="carousel-item text-center">
-                <img src="assets/images/Number3.jpg" class="center-block" alt="...">
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <footer class="footer footer-light" style="background-color: #e3f2fd;">
-        <div class="row" id="github" style="justify-content:center; margin:auto">
-            <a href="https://github.com/zomg830/BC-Project-1" target="_blank"><i class="fab fa-github fa-lg hvr-pulse-grow"></i></a> 
-        </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/main.js"></script>
+	<!-- modal dialog for initial search -->
+	<div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalCenterTitle">Job Search</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="jobTitle">Job Title</label>
+						<input type="search" class="form-control" id="jobTitle" placeholder="Job Title Search Term">
+						<label for="jobLocation">Job Title</label>
+						<input type="search" class="form-control" id="jobLocation" placeholder="Zip Code">
+						<label for="sitePick">Search These Sites</label>
+						<div class="form-check"><!--  checkbox to select / un-select all job sites  -->
+							<input type="checkbox" class="form-check-input" id="all">
+							<label class="form-check-label" for="all">Select all</label>
+						</div>
+						<select multiple class="form-control" id="sitePick" size="5"><!--  multiple select element for job sites to be returned  -->
+							<option>github</option>			<!--  var choice1 -->
+							<option>usajobs</option>		<!--  var choice2 -->
+							<option>indeed</option>			<!--  var choice3 -->
+							<option>ziprecruiter</option>	<!--  var choice4 -->
+							<option>glassdoor</option>		<!--  var choice5 -->
+						</select>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+					<!--  calls ajax GET and closes modal-->
+					<button type="button" class="btn btn-primary" id="findJob" data-dismiss="modal">Find Jobs</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- modal dialog for data return -->
+	<div class="modal fade" id="modalCenter1" tabindex="-1" role="dialog" aria-labelledby="modalCenter1Title" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalCenter1Title">Search Results</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<!--  job search returns go here  -->
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button><!--  closes modal  -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- navbar -->
+	<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+		<a class="navbar-brand"><img src="assets/images/scone.png" style="width:10%;" alt="...">SCONE Job Search</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="https://jobs.github.com/" target="_blank">GitHub Jobs</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://www.usajobs.gov/" target="_blank">USAJOBS</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://www.indeed.com/" target="_blank">Indeed</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://www.ziprecruiter.com/" target="_blank">ZipRecruiter</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://www.glassdoor.com/index.htm" target="_blank">Glassdoor</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<br>
+	<!-- landing -->
+	<div class="container">
+		<div class="card">
+			<div class="card-header"> Finding the right job is tough. </div>
+			<div class="card-body">
+				<h5 class="card-title">SCONE is here to help things go right!</h5>
+				<p class="card-text">By searching for jobs with the Socially Conscious Online Navigator for Employment (SCONE), you're not just finding a job, you're finding fulfillment.</p>
+				<a class="btn btn-outline-primary" data-toggle="modal" data-target="#modalCenter">Start your job search today!</a>
+			</div>
+		</div>
+	</div>
+	<div class="container" id="search-boxes">
+		<div class="input-group mb-3">
+			<input type="text" class="form-control" id="job-title" placeholder="Job Title, e.g., Social Media Influencer" aria-label="Example text with button addon" aria-describedby="button-addon1"><!--  where is button-addon1  -->
+			<div class="input-group-prepend">
+				<button class="btn btn-outline-primary form-submit" type="button" id="job-title-btn">Search</button>
+			</div>
+		</div>
+		<div class="input-group mb-3">
+			<input type="text" class="form-control" id="location" placeholder="Location, e.g., city, state, or zip" aria-label="Example text with button addon" aria-describedby="button-addon1"><!--  where is button-addon1  -->
+			<div class="input-group-prepend">
+				<button class="btn btn-outline-primary form-submit" type="button" id="location-btn">Search</button>
+			</div>
+		</div>
+	</div>
+	<div class="container bg-light">
+		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active text-center">
+					<img src="assets/images/Number1.png" class="center-block" alt="...">
+				</div>
+				<div class="carousel-item text-center">
+					<img src="assets/images/Number2.jpg" class="center-block" alt="...">
+				</div>
+				<div class="carousel-item text-center">
+					<img src="assets/images/Number3.jpg" class="center-block" alt="...">
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<footer class="footer footer-light" style="background-color: #e3f2fd;">
+		<div class="row" id="github" style="justify-content:center; margin:auto">
+			<a href="https://github.com/zomg830/BC-Project-1" target="_blank"> <i class="fab fa-github fa-lg hvr-pulse-grow">
+			</i>
+			</a>
+		</div>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> 
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script> 
+	<script src="assets/js/main.js"></script>
 </body>
 </html>

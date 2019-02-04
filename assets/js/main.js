@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	
     console.log( "ready!" );
 	//base url for job search api's
     var choice1 = 'https://jobs.github.com/positions.json?';
@@ -6,8 +7,8 @@ $(document).ready(function() {
     var choice3 = 'https://api.indeedassessments.com/v1/';
     var choice4 = '';  //I can't get the url for ziprecruiter...Matt signed up
     var choice5 = 'http://api.glassdoor.com/api/api.htm?';
-
-    $(".form-submit").on("click", function(event){
+	//changed the id to modal button
+    $("#findJob").on("click", function(event){
         event.preventDefault();
         var jobInput = $("#job-title").val();
         var locInput = $("#location").val();
