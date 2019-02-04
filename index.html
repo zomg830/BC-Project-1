@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +14,7 @@
     <link rel="icon" href="assets/images/scone.png">
 </head>
 <body>
-      <!-- Modal -->
+      <!-- modal dialog for initial search -->
       <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
@@ -29,22 +29,25 @@
                     <label for="keyword">Keyword</label>
                     <input type="search" class="form-control" id="keyword" placeholder="Search">
                     <label for="sitePick">Search These Sites</label>
+					<!--  checkbox to select / un-select all job sites  -->
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="all" value="1">
+                        <input type="checkbox" class="form-check-input" id="all">
                         <label class="form-check-label" for="all">Select all</label>
                     </div>
+					<!--  multiple select element for job sites to be returned-->
                     <select multiple class="form-control" id="sitePick" size="5">
-                        <option value="github">github</option>
-                        <option value="usajobs">usajobs</option>
-                        <option value="indeed">indeed</option>
-                        <option value="ziprecruiter">ziprecruiter</option>
-                        <option value="glassdoor">glassdoor</option>
+                        <option>github</option>
+                        <option>usajobs</option>
+                        <option>indeed</option>
+                        <option>ziprecruiter</option>
+                        <option>glassdoor</option>
                     </select>
                     <small></small>
                 </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+				<!--  we could use this button to call the ajax GET function-->
               <button type="button" class="btn btn-primary">Find Jobs</button>
             </div>
           </div>
@@ -52,7 +55,7 @@
       </div>
       <!-- navbar -->
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-        <a class="navbar-brand"><img src="assets/images/scone.png" style="width:10%;">SCONE Job Search</a>
+        <a class="navbar-brand"><img src="assets/images/scone.png" style="width:10%;" alt="...">SCONE Job Search</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -92,13 +95,14 @@
     </div>
     <div class="container" id="search-boxes">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" id="job-title"placeholder="Job Title, e.g., Social Media Influencer" aria-label="Example text with button addon" aria-describedby="button-addon1">
+			
+            <input type="text" class="form-control" id="job-title" placeholder="Job Title, e.g., Social Media Influencer" aria-label="Example text with button addon" aria-describedby="button-addon1"><!--  where is button-addon1  -->
             <div class="input-group-prepend">
                 <button class="btn btn-outline-primary form-submit" type="button" id="job-title-btn">Search</button>
             </div>
         </div>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" id="location" placeholder="Location, e.g., city, state, or zip" aria-label="Example text with button addon" aria-describedby="button-addon1">
+            <input type="text" class="form-control" id="location" placeholder="Location, e.g., city, state, or zip" aria-label="Example text with button addon" aria-describedby="button-addon1"><!--  where is button-addon1  -->
             <div class="input-group-prepend">
                 <button class="btn btn-outline-primary form-submit" type="button" id="location-btn">Search</button>
             </div>
