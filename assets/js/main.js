@@ -7,6 +7,7 @@ $(document).ready(function() {
     var choice3 = 'https://api.indeedassessments.com/v1/';
     var choice4 = '';  //I can't get the url for ziprecruiter...Matt signed up
     var choice5 = 'http://api.glassdoor.com/api/api.htm?';
+    var aggregateResults = [];
 	//changed the id to modal button
     $("#findJob").on("click", function(event){
         event.preventDefault();
@@ -18,8 +19,6 @@ $(document).ready(function() {
         searchDotGov(jobInput,locInput);
     });
 
-    aggregateResults = [];
-
     var searchDotGov = (job, loc) => {
         var queryURL = `https://jobs.search.gov/jobs/search.json?query=${job}+in+${loc}`
         console.log("queryURL" + queryURL);
@@ -27,10 +26,11 @@ $(document).ready(function() {
             url: queryURL,
             method: "GET",
         }).then(function(response){
-            console.log("Response: " + response);
-            for (var i = 0; i < response.length; i++){
+            console.log(response);
+            for (let i = 0; i < response.length; i++){
                 var respObj = {
                     title: response[i].position_title,
+                    company: response[i].organization_name,
                     location: response[i].locations[0],
                     posted: response[i].start_date
                 }
