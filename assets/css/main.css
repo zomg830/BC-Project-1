@@ -27,6 +27,9 @@
 }
 
 .carouselImg{
-    width:75%;
     max-height:50vh;
+}
+
+.carouselContainer{
+    padding-top: 2vh;
 }

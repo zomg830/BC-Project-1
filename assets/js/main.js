@@ -10,21 +10,24 @@ $(document).ready(function() {
 	//changed the id to modal button
     $("#findJob").on("click", function(event){
         event.preventDefault();
-        var jobInput = $("#job-title").val();
-        var locInput = $("#location").val();
+        var jobInput = $("#jobTitle").val();
+        var locInput = $("#jobLocation").val();
         console.log(jobInput);
         console.log(locInput);
         $(".form-control").val("");
         searchDotGov(jobInput,locInput);
     });
 
+    aggregateResults = [];
+
     var searchDotGov = (job, loc) => {
         var queryURL = `https://jobs.search.gov/jobs/search.json?query=${job}+in+${loc}`
+        console.log("queryURL" + queryURL);
         $.ajax({
             url: queryURL,
             method: "GET",
         }).then(function(response){
-            console.log(response);
+            console.log("Response: " + response);
             for (var i = 0; i < response.length; i++){
                 var respObj = {
                     title: response[i].position_title,

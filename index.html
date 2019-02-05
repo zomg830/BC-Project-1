@@ -25,9 +25,9 @@
 				<div class="modal-body">
 					<div class="form-group">
 						<label for="jobTitle">Job Title</label>
-						<input type="search" class="form-control" id="jobTitle" placeholder="Job Title Search Term">
+						<input type="text" class="form-control" id="jobTitle" placeholder="Job Title Search Term">
 						<label for="jobLocation">Job Title</label>
-						<input type="search" class="form-control" id="jobLocation" placeholder="Zip Code">
+						<input type="text" class="form-control" id="jobLocation" placeholder="Zip Code">
 						<label for="sitePick">Search These Sites</label>
 						<div class="form-check"><!--  checkbox to select / un-select all job sites  -->
 							<input type="checkbox" class="form-check-input" id="all">
@@ -104,34 +104,18 @@
 				<h5 class="card-title">SCONE is here to help things go right!</h5>
 				<p class="card-text">By searching for jobs with the Socially Conscious Online Navigator for Employment (SCONE), you're not just finding a job, you're finding fulfillment.</p>
 				<a class="btn btn-outline-primary" data-toggle="modal" data-target="#modalCenter">Start your job search today!</a>
-			</div>
-		</div>
-	</div>
-	<div class="container" id="search-boxes">
-		<div class="input-group mb-3">
-			<input type="text" class="form-control" id="job-title" placeholder="Job Title, e.g., Social Media Influencer" aria-label="Example text with button addon" aria-describedby="button-addon1"><!--  where is button-addon1  -->
-			<div class="input-group-prepend">
-				<button class="btn btn-outline-primary form-submit" type="button" id="job-title-btn">Search</button>
-			</div>
-		</div>
-		<div class="input-group mb-3">
-			<input type="text" class="form-control" id="location" placeholder="Location, e.g., city, state, or zip" aria-label="Example text with button addon" aria-describedby="button-addon1"><!--  where is button-addon1  -->
-			<div class="input-group-prepend">
-				<button class="btn btn-outline-primary form-submit" type="button" id="location-btn">Search</button>
-			</div>
-		</div>
-	</div>
-	<div class="container bg-light">
-		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-			<div class="carousel-inner">
-				<div class="carousel-item active text-center">
-					<img src="assets/images/job-search1.jpg" class="center-block carouselImg" alt="...">
-				</div>
-				<div class="carousel-item text-center">
-					<img src="assets/images/job-search2.jpg" class="center-block carouselImg" alt="...">
-				</div>
-				<div class="carousel-item text-center">
-					<img src="assets/images/job-search3.jpg" class="center-block carouselImg" alt="...">
+				<div id="carouselExampleControls" class="carousel slide carouselContainer" data-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active text-center">
+							<img src="assets/images/job-search1.jpg" class="center-block carouselImg" alt="...">
+						</div>
+						<div class="carousel-item text-center">
+							<img src="assets/images/job-search2.jpg" class="center-block carouselImg" alt="...">
+						</div>
+						<div class="carousel-item text-center">
+							<img src="assets/images/job-search3.jpg" class="center-block carouselImg" alt="...">
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
