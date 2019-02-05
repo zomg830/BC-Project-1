@@ -25,6 +25,15 @@ $(document).ready(function() {
             method: "GET",
         }).then(function(response){
             console.log(response);
+            for (var i = 0; i < response.length; i++){
+                var respObj = {
+                    title: response[i].position_title,
+                    location: response[i].locations[0],
+                    posted: response[i].start_date
+                }
+                aggregateResults.push(respObj);
+            }
+            console.log("Aggregate results: " + JSON.stringify(aggregateResults));
         })
     };
 });

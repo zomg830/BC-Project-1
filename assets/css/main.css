@@ -25,3 +25,8 @@
 .carousel-inner > .item > img{
     margin:auto;
 }
+
+.carouselImg{
+    width:75%;
+    max-height:50vh;
+}
