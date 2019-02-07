@@ -44,7 +44,7 @@ $(document).ready(function() {
     };
 
     var searchAuthenticJobs = (job, loc) => {
-        var queryURL = `https://authenticjobs.com/api/?api_key=85265268d6f1738391d7c732415e84e9&method=aj.jobs.search&keywords=${job}&location=${loc}&format=json&perpage=10`
+        var queryURL = `https://authenticjobs.com/api/?api_key=85265268d6f1738391d7c732415e84e9&method=aj.jobs.search&keywords=${job}&location=${loc}&perpage=100&format=json`
         console.log("queryURL" + queryURL);
         $.ajax({
             url: queryURL,

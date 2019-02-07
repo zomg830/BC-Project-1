@@ -1,0 +1,59 @@
+{
+  "_from": "indeed-scraper",
+  "_id": "indeed-scraper@2.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-OGG1RUOI43lZqpFCfQhXcXgt86lcuiY7k0G0pXvzLjSJHV6RVdKyaVevL4aXApdJKAFkNCxrRRxeFeh94xch9w==",
+  "_location": "/indeed-scraper",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "indeed-scraper",
+    "name": "indeed-scraper",
+    "escapedName": "indeed-scraper",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/indeed-scraper/-/indeed-scraper-2.1.0.tgz",
+  "_shasum": "f50106ec8a10549fb142a70a51d3d39fb7b129c1",
+  "_spec": "indeed-scraper",
+  "_where": "C:\\Users\\Public\\desktop\\deployment",
+  "author": {
+    "name": "Ryan Baxley"
+  },
+  "bugs": {
+    "url": "https://github.com/rynobax/indeed-scraper/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "request": "^2.79.0"
+  },
+  "deprecated": false,
+  "description": "A Node.js package for getting job listings from Indeed.com",
+  "devDependencies": {},
+  "homepage": "https://github.com/rynobax/indeed-scraper#readme",
+  "keywords": [
+    "Indeed.com",
+    "Indeed",
+    "Scraper",
+    "Job",
+    "Search"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "indeed-scraper",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rynobax/indeed-scraper.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.1.0"
+}
