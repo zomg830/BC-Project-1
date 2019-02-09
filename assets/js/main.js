@@ -8,8 +8,12 @@ $(document).ready(function() {
     var choice4 = '';  //I can't get the url for ziprecruiter...Matt signed up
     var choice5 = 'http://api.glassdoor.com/api/api.htm?';
     var aggregateResults = [];
+    
+    
+    
 	//changed the id to modal button
     $("#findJob").on("click", function(event){
+        $('#modalCenter1')
         event.preventDefault();
         var jobInput = $("#jobTitle").val();
         var locInput = $("#jobLocation").val();
@@ -17,7 +21,7 @@ $(document).ready(function() {
         console.log(locInput);
         $(".form-control").val("");
         searchDotGov(jobInput,locInput);
-        searchAuthenticJobs(jobInput,locInput);
+        //searchAuthenticJobs(jobInput,locInput);
     });
 
     var searchDotGov = (job, loc) => {
@@ -43,7 +47,7 @@ $(document).ready(function() {
         })
     };
 
-    var searchAuthenticJobs = (job, loc) => {
+    /*var searchAuthenticJobs = (job, loc) => {
         var queryURL = `https://authenticjobs.com/api/?api_key=85265268d6f1738391d7c732415e84e9&method=aj.jobs.search&keywords=${job}&location=${loc}&perpage=100&format=json`
         console.log("queryURL" + queryURL);
         $.ajax({
@@ -65,12 +69,20 @@ $(document).ready(function() {
             }
             console.log("Aggregate results: " + JSON.stringify(aggregateResults));
         })
-    }
+    }*/
 
-    var modalAppend = (arr) => {
-        $(".modal-body").append("<div>"+arr[0]+"</div>")
-    }
+    /*var modalAppend = (arr) => {
+        $("#searchResults").append("<div>"+arr[0]+"</div>")
+    }*/
 });
+
+/*$('model-body > article').infiniteScroll({
+  // options
+  path: '.pagination__next',
+  append: '.post',
+  history: false,
+});
+*/
 
 //modal search checkbox to select/un-select all job sites 
 $('.form-check-input').on('change', function(){
