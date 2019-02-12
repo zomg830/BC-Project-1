@@ -21,7 +21,8 @@ $(document).ready(function() {
         console.log(locInput);
         $(".form-control").val("");
         searchDotGov(jobInput,locInput);
-        //searchAuthenticJobs(jobInput,locInput);
+        searchAuthenticJobs(jobInput,locInput);
+        setTimeout(populateModal, 5000);
     });
 
     var searchDotGov = (job, loc) => {
@@ -39,7 +40,8 @@ $(document).ready(function() {
                     title: response[i].position_title,
                     company: response[i].organization_name,
                     location: response[i].locations,
-                    posted: response[i].start_date
+                    posted: response[i].start_date,
+                    url: response[i].url
                 }
                 aggregateResults.push(respObj);
             }
@@ -47,7 +49,7 @@ $(document).ready(function() {
         })
     };
 
-    /*var searchAuthenticJobs = (job, loc) => {
+    var searchAuthenticJobs = (job, loc) => {
         var queryURL = `https://authenticjobs.com/api/?api_key=85265268d6f1738391d7c732415e84e9&method=aj.jobs.search&keywords=${job}&location=${loc}&perpage=100&format=json`
         console.log("queryURL" + queryURL);
         $.ajax({
@@ -62,18 +64,29 @@ $(document).ready(function() {
                 let respObj = {
                     title: ajResp[i].category.name,
                     company: ajResp[i].company.name,
-                    location: "",
-                    posted: ajResp[i].post_date
+                    location: ajResp[i].company.location.name,
+                    posted: ajResp[i].post_date,
+                    url: ajResp[i].url
                 }
                 aggregateResults.push(respObj);
             }
             console.log("Aggregate results: " + JSON.stringify(aggregateResults));
         })
-    }*/
+    }
 
     /*var modalAppend = (arr) => {
         $("#searchResults").append("<div>"+arr[0]+"</div>")
     }*/
+
+    var populateModal = () => {
+        for (i = 0; i < aggregateResults.length; i++){
+            $(`#title${i}`).text(aggregateResults[i].title);
+            $(`#loc${i}`).text(aggregateResults[i].location);
+            $(`#desc${i}`).text(aggregateResults[i].posted);
+            $(`#url${i}`).attr("href", aggregateResults[i].url);
+            $(`#url${i}`).text(aggregateResults[i].url);
+        }
+    };
 });
 
 /*$('model-body > article').infiniteScroll({
