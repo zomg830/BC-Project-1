@@ -24,7 +24,7 @@ $(document).ready(function() {
         searchDotGov(jobInput,locInput);
         searchAuthenticJobs(jobInput,locInput);
         // searchGithubJobs(jobInput, locInput);
-        setTimeout(populateModal, 2000);
+        setTimeout(populateModal, 5000);
     });
 
     var searchDotGov = (job, loc) => {
