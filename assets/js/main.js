@@ -23,6 +23,7 @@ $(document).ready(function() {
         $(".form-control").val("");
         searchDotGov(jobInput,locInput);
         searchAuthenticJobs(jobInput,locInput);
+        // searchGithubJobs(jobInput, locInput);
         setTimeout(populateModal, 2000);
     });
 
@@ -49,6 +50,37 @@ $(document).ready(function() {
             console.log("Aggregate results: " + JSON.stringify(aggregateResults));
         })
     };
+
+    // var searchGithubJobs = (job, loc) => {
+    //     var queryURL = `https://jobs.github.com/positions.json?description=${job}&location=${loc}`
+    //     console.log("queryURL" + queryURL);
+    //     $.ajax({
+    //         url: queryURL,
+    //         method: "GET",
+    //         crossDomain: true,
+    //         dataType: "jsonp",
+    //         headers: {
+    //             "Access-Control-Allow-Credentials": true,
+    //             "Access-Control-Allow-Origin": "*",
+    //             "Access-Control-Allow-Methods": "GET",
+    //             "Access-Control-Allow-Headers": "application/json",
+    //         }
+    //     }).then(function(response){
+    //         console.log(response);
+    //         for (let i = 0; i < response.length; i++){
+    //             let respObj = {
+    //                 title: response[i].position_title,
+    //                 company: response[i].company,
+    //                 location: response[i].location,
+    //                 posted: response[i].created_at,
+    //                 url: response[i].url
+    //             }
+    //             aggregateResults.push(respObj);
+    //         }
+    //         console.log("Aggregate results: " + JSON.stringify(aggregateResults));
+    //     })
+    // };
+
 
     var searchAuthenticJobs = (job, loc) => {
         var queryURL = `https://authenticjobs.com/api/?api_key=85265268d6f1738391d7c732415e84e9&method=aj.jobs.search&keywords=${job}&location=${loc}&perpage=100&format=json`
