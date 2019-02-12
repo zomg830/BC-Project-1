@@ -15,6 +15,7 @@ $(document).ready(function() {
     $("#findJob").on("click", function(event){
         $('#modalCenter1')
         event.preventDefault();
+        aggregateResults = []
         var jobInput = $("#jobTitle").val();
         var locInput = $("#jobLocation").val();
         console.log(jobInput);
@@ -22,7 +23,7 @@ $(document).ready(function() {
         $(".form-control").val("");
         searchDotGov(jobInput,locInput);
         searchAuthenticJobs(jobInput,locInput);
-        setTimeout(populateModal, 5000);
+        setTimeout(populateModal, 2000);
     });
 
     var searchDotGov = (job, loc) => {
@@ -82,7 +83,7 @@ $(document).ready(function() {
         for (i = 0; i < aggregateResults.length; i++){
             $(`#title${i}`).text(aggregateResults[i].title);
             $(`#loc${i}`).text(aggregateResults[i].location);
-            $(`#desc${i}`).text(aggregateResults[i].posted);
+            $(`#desc${i}`).text("Date posted: " + aggregateResults[i].posted);
             $(`#url${i}`).attr("href", aggregateResults[i].url);
             $(`#url${i}`).text(aggregateResults[i].url);
         }
