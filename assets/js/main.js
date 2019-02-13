@@ -13,9 +13,9 @@ $(document).ready(function() {
     
 	//changed the id to modal button
     $("#findJob").on("click", function(event){
-        $('#modalCenter1')
+        $('#accordion1').empty();
         event.preventDefault();
-        aggregateResults = []
+        aggregateResults = [];
         var jobInput = $("#jobTitle").val();
         var locInput = $("#jobLocation").val();
         console.log(jobInput);
@@ -24,7 +24,7 @@ $(document).ready(function() {
         searchDotGov(jobInput,locInput);
         searchAuthenticJobs(jobInput,locInput);
         // searchGithubJobs(jobInput, locInput);
-        setTimeout(populateModal, 5000);
+        setTimeout(populateModal, 7000);
     });
 
     var searchDotGov = (job, loc) => {
@@ -95,9 +95,9 @@ $(document).ready(function() {
             console.log(ajResp);
             for (let i = 0; i < ajResp.length; i++){
                 let respObj = {
-                    title: ajResp[i].category.name,
+                    title: ajResp[i].title,
                     company: ajResp[i].company.name,
-                    location: ajResp[i].company.location.name,
+                    // location: ajResp[i].company.location.name,
                     posted: ajResp[i].post_date,
                     url: ajResp[i].url
                 }
@@ -112,23 +112,45 @@ $(document).ready(function() {
     }*/
 
     var populateModal = () => {
-        for (i = 0; i < aggregateResults.length; i++){
-            $(`#title${i}`).text(aggregateResults[i].title);
-            $(`#loc${i}`).text(aggregateResults[i].location);
-            $(`#desc${i}`).text("Date posted: " + aggregateResults[i].posted);
-            $(`#url${i}`).attr("href", aggregateResults[i].url);
-            $(`#url${i}`).text(aggregateResults[i].url);
-        }
+        for (i = 0; i < aggregateResults.length && i < 20; i++){
+            $("#accordion1").append(
+                '<div class="card">'
+                +'<div class="card-header row" role="tab" id="headingOne1">'
+                    +'<div class="col-sm-8">'
+                        +'<h5 class="mb-0">'
+                            +'<a data-toggle="collapse" href="#collapse'+intToString(i)+'1" role="button" aria-expanded="true" aria-controls="collapse'+intToString(i)+'1" id="title'+`${i}`+'"></a>'
+                        +'</h5>'
+                    +'</div>'
+                    +'<div class="col-sm-4">'
+                        +'<p id="loc'+`${i}`+'"></p>'
+                    +'</div>'
+                +'</div>'
+                +'<div id="collapse'+intToString(i)+'1" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordion1">'
+                  +'<div class="card-body">'
+                      +'<p id="desc'+`${i}`+'"></p>'
+                      +'<a href="" id="url'+`${i}`+'"></a>'
+                  +'</div>'
+                +'</div>'
+              +'</div>'
+            );
+            try{
+                $(`#title${i}`).text(aggregateResults[i].title);
+                $(`#loc${i}`).text(aggregateResults[i].location);
+                $(`#desc${i}`).text("Date posted: " + aggregateResults[i].posted);
+                $(`#url${i}`).attr("href", aggregateResults[i].url);
+                $(`#url${i}`).text(aggregateResults[i].url);
+            }
+            catch (e){
+                console.log(e);
+            }
+        };
     };
-});
 
-/*$('model-body > article').infiniteScroll({
-  // options
-  path: '.pagination__next',
-  append: '.post',
-  history: false,
+    var intToString = (int) => {
+        var strs = ['One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen','Twenty']
+        return strs[i];
+    }
 });
-*/
 
 //modal search checkbox to select/un-select all job sites 
 $('.form-check-input').on('change', function(){

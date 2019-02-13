@@ -28,25 +28,7 @@
               <label for="jobTitle">Job Title</label>
               <input type="text" class="form-control" id="jobTitle" placeholder="Job Title Search Term">
               <label for="jobLocation">Job Title</label>
-              <input type="text" class="form-control" id="jobLocation" placeholder="Zip Code">
-              <label for="sitePick">Search These Sites</label>
-              <div class="form-check"><!--  checkbox to select / un-select all job sites  -->
-                <input type="checkbox" class="form-check-input" id="all">
-                <label class="form-check-label" for="all">Select all</label>
-              </div>
-              <select multiple class="form-control" id="sitePick" size="5">
-                <!--  multiple select element for job sites to be returned  -->
-                <option>github</option>
-                <!--  var choice1 -->
-                <option>usajobs</option>
-                <!--  var choice2 -->
-                <option>indeed</option>
-                <!--  var choice3 -->
-                <option>ziprecruiter</option>
-                <!--  var choice4 -->
-                <option>glassdoor</option>
-                <!--  var choice5 -->
-              </select>
+              <input type="text" class="form-control" id="jobLocation" placeholder="City, State, or Zip Code">
             </div>
           </div>
           <div class="modal-footer">
@@ -58,87 +40,15 @@
       </div>
     </div>
     <!-- modal dialog for data return -->
-    <div class="modal fade w-75" id="modalCenter1" tabindex="-1" role="dialog" aria-labelledby="modalCenter1Title" aria-hidden="false">
+    <div class="modal fade" id="modalCenter1" tabindex="-1" role="dialog" aria-labelledby="modalCenter1Title" aria-hidden="false" style="overflow-y:auto">
       <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content" style="max-width: 75vw">
           <div class="modal-header">
             <h5 class="modal-title" id="modalCenter1Title">Search Results</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
           </div>
-          <div class="modal-body" id="searchResults">
+          <div class="modal-body" id="searchResults" style="overflow: auto">
             <div id="accordion1" role="tablist">
-              <div class="card">
-                <div class="card-header row" role="tab" id="headingOne1">
-                    <div class="col-sm-8">
-                        <h5 class="mb-0">
-                            <a data-toggle="collapse" href="#collapseOne1" role="button" aria-expanded="true" aria-controls="collapseOne1" id="title0">Job Title 1 </a>
-                        </h5>
-                    </div>
-                    <div class="col-sm-4">
-                        <p id="loc0">Austin, TX</p>
-                    </div>
-                </div>
-                <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordion1">
-                  <div class="card-body">
-                      <p id="desc0">                      </p>
-                      <a href="" id="url0">www.somejob.com</a>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header row" role="tab" id="headingTwo1">
-                    <div class="col-sm-8">
-                        <h5 class="mb-0">
-                        <a class="collapsed" data-toggle="collapse" href="#collapseTwo1" role="button" aria-expanded="false" aria-controls="collapseTwo1" id="title1">Job Title 2 </a>
-                    </h5>
-                    </div>
-                    <div class="col-sm-4">
-                        <p id="loc1">Austin, TX</p>
-                    </div>
-                </div>
-                <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1" data-parent="#accordion1">
-                  <div class="card-body">
-                    <p id="desc1"></p>
-                      <a href="" id="url1">www.somejob.com</a>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header row" role="tab" id="headingThree1">
-                    <div class="col-sm-8">
-                        <h5 class="mb-0">
-                            <a class="collapsed" data-toggle="collapse" href="#collapseThree1" role="button" aria-expanded="false" aria-controls="collapseThree1" id="title2">Job Title 3 </a>
-                        </h5>
-                    </div>
-                    <div class="col-sm-4">
-                        <p id="loc2">Austin, TX</p>
-                    </div>
-                </div>
-                <div id="collapseThree1" class="collapse" role="tabpanel" aria-labelledby="headingThree1" data-parent="#accordion1">
-                  <div class="card-body">
-                    <p id="desc2"></p>
-					<a href="" id="url2">www.somejob.com</a>                      
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header row" role="tab" id="headingFour1">
-                    <div class="col-sm-8">
-                        <h5 class="mb-0">
-                            <a class="collapsed" data-toggle="collapse" href="#collapseFour1" role="button" aria-expanded="false" aria-controls="collapseFour1" id="title3">Job Title 4 </a>
-                        </h5>
-                    </div>
-                    <div class="col-sm-4">
-                        <p id="loc3">Austin, TX</p>
-                    </div>
-                </div>
-                <div id="collapseFour1" class="collapse" role="tabpanel" aria-labelledby="headingFour1" data-parent="#accordion1">
-                  <div class="card-body">
-                    <p id="desc3"></p>
-					<a href="" id="url3">www.somejob.com</a>                      
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
           <div class="modal-footer">
