@@ -128,7 +128,7 @@ $(document).ready(function() {
                 +'<div id="collapse'+intToString(i)+'1" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordion1">'
                   +'<div class="card-body">'
                       +'<p id="desc'+`${i}`+'"></p>'
-                      +'<a href="" id="url'+`${i}`+'"></a>'
+                      +'<a href="" target="_blank" id="url'+`${i}`+'"></a>'
                   +'</div>'
                 +'</div>'
               +'</div>'
